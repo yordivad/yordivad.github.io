@@ -1,0 +1,9 @@
+
+div(class="header")
+    nav(class="navbar")
+        div(class="navbar-end")
+            | {% for view in site.views %}
+            div(class="navbar-item")
+                span(event="{{view.event}}") {{ view.name }}
+            | {% endfor %}
+

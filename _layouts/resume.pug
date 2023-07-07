@@ -1,0 +1,37 @@
+---
+bodyClass: 'page-resume'
+---
+extends default.pug
+
+
+block content
+    include header.pug
+
+    div(class="resume-content")
+        div(class="expand is-flex is-align-content-stretch")
+            div(class="container")
+                div(class="columns expand m-0")
+                    div(class="column expand")
+                    | {% for view in site.views %}
+                    | {% if view.default %}
+                    article(class="section" event="{{view.event}}")
+                        | {{ view.content | markdownify   | smartify}}
+                    | {% else %}
+                    article(class="section" event="{{view.event}}" style="display:none")
+                        | {{ view.content | markdownify   | smartify}}
+                    | {% endif %}
+
+                    | {% endfor %}
+
+                    div(class="column is-3 cover")
+                        include info.pug
+
+    include footer.pug
+
+block scripts
+    script(type="module").
+        window.addEventListener("app.load", (e)=> {
+            let app = e.detail;
+            let page = app.CreateResume();
+            page.load();
+        })

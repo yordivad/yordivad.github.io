@@ -1,0 +1,56 @@
+lang: en
+title: Roy Gonzalez.
+email: yordivad@gmail.com
+description: >- #Roy Gonzalez digital resume.
+permalink: pretty
+baseurl: ""
+url: "https://yordivad.github.io"
+
+livereload: true
+limit_posts: 0
+quiet: true
+incremental: true
+
+
+collections:
+  views:
+    sort_by: weight
+    output: true
+
+
+
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-environment-variables
+  - jekyll-mermaid
+  - jekyll-liquify
+  - jekyll-pug
+
+
+
+exclude:
+  - package.json
+  - tsconfig.json
+  - webpack.config.js
+  - yarn.lock
+  - yarn-error.log
+  - assets
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
+  - skaffold.yaml
+  - makefile
+  - compose.yaml
+  - .gitignore
+  - script
+  - .idea

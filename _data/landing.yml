@@ -1,0 +1,20 @@
+
+items:
+  - title: Colibri
+    subtitle: Ecolodge
+    img: /images/landing/5.png
+  - title: Puerto viejo
+    subtitle: You'll know you've reached Puerto Viejo as you come around the curve of Playa Negra arching its back against the Caribbean coastline
+    img: /images/landing/4.png
+  - title: Forest Two
+    subtitle: by ecolounge
+    img: /images/landing/1.png
+  - title: Forest Three
+    subtitle: by ecolounge
+    img: /images/landing/2.png
+
+carousel:
+  - img: /images/rooms/colibri.1.png
+  - img: /images/rooms/colibri.2.png
+  - img: /images/rooms/colibri.3.png
+  - img: /images/rooms/colibri.4.png

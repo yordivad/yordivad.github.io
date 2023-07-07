@@ -1,0 +1,7 @@
+.idea
+_site
+node_modules
+.pug-cache
+.jekyll-metadata
+/_assets/
+/dist/

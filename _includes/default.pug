@@ -1,0 +1,15 @@
+doctype html
+
+html(lang="{{ site.lang | default: 'en' }}")
+
+    head
+        title {% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}
+        meta(name="viewport" content="width=device-width, initial-scale=1")/
+        include meta.pug
+        link(rel="icon" type="image/png" href="{{'/images/favicon-32x32.png' | relative_url }}")
+        script(src="{{site.baseurl}}/dist/main.js")
+        block scripts
+
+    body(class="page {{layout.bodyClass}}")
+        block content
+

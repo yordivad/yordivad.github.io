@@ -1,0 +1,86 @@
+
+@import "../library";
+
+$header-size: 50px;
+$footer-size: 200px;
+$content-size: calc(100% - ($header-size + $footer-size + 1px));
+
+.page-resume {
+  height: 100vh;
+  font-family: $family;
+
+  .header {
+
+    height: $header-size;
+    .navbar {
+      background-color: $principal;
+    }
+    .navbar-item {
+      color: $white;
+    }
+  }
+
+  .resume-content {
+    height: $content-size;
+    padding: 40px 0;
+  }
+
+  .expand {
+    height: 100%;
+  }
+
+  .side-right {
+    height: 100%;
+  }
+
+  .footer {
+    width: 100%;
+    height: $footer-size;
+    background-color: $primary;
+    color: $white;
+    img {
+      height: auto;
+      width: 32px;
+    }
+  }
+
+
+  article {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    padding: 0 40px;
+    h1 {
+      font-size: 3em;
+      font-family: $title-font;
+      margin-bottom: 40px;
+      color: $principal;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin: 10px 0;
+    }
+    h3 {
+      font-size: 1.4em;
+      margin: 10px 0;
+    }
+    h4 {
+      font-size: 0.9em;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 40px 0;
+      line-height: 30px;
+      text-align: justify;
+      font-size: 1.2em;
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+
