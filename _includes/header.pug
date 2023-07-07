@@ -1,0 +1,13 @@
+
+div(class="header")
+    nav(class="navbar")
+        div(class="navbar-end")
+            | {% for view in site.views %}
+            div(class="navbar-item active")
+                | {% if view.default %}
+                span(event="{{view.event}}" class="active" ) {{ view.name }}
+                | {% else %}
+                span(event="{{view.event}}" ) {{ view.name }}
+                | {% endif %}
+            | {% endfor %}
+

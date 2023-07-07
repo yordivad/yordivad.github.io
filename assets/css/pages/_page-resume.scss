@@ -1,0 +1,113 @@
+
+@import "../library";
+
+$header-size: 50px;
+$footer-size: 200px;
+$content-size: calc(100% - ($header-size + $footer-size + 1px));
+
+.page-resume {
+  height: 100vh;
+  font-family: $family;
+
+  .header {
+
+    height: $header-size;
+    .navbar {
+      background-color: $first;
+      padding-right: 50px;
+    }
+    .navbar-item {
+      font-weight: bold;
+      font-family: "Roboto", serif;
+      color: $third;
+      cursor: pointer;
+      .active {
+        border-bottom: medium solid $second;
+      }
+
+    }
+  }
+
+  .resume-content {
+    height: $content-size;
+    padding: 40px 0;
+  }
+
+  .expand {
+    height: 100%;
+  }
+
+  .side-right {
+    height: 100%;
+    .centered {
+      text-align: center;
+    }
+    .content {
+      padding-top: 20px;
+    }
+    hr {
+      margin-bottom: 40px;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: $footer-size;
+    background-color: $fourth;
+    color: $white;
+    font-family: $title-font;
+    img {
+      height: auto;
+      width: 32px;
+    }
+  }
+
+
+  article {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    padding: 0 40px;
+    font-family: "Roboto",  serif;
+
+    h1 {
+      font-size: 3em;
+      font-family: $title-font;
+      margin-bottom: 40px;
+      color: $second;
+    }
+    h2 {
+      font-size: 1.6em;
+      font-family: $subtitle-font;
+      color: $text;
+      margin: 10px 0;
+      padding-top: 40px;
+    }
+    h3 {
+      font-size: 1.2em;
+      margin: 10px 0;
+      font-family: $subtitle-font;
+      color: $text;
+    }
+    h4 {
+      font-size: 0.9em;
+      margin: 10px 0;
+      font-weight: bold;
+      font-family: $subtitle-font;
+      color: $text;
+    }
+
+    p {
+      margin: 40px 0;
+      line-height: 30px;
+      text-align: justify;
+      font-size: 1.2em;
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+
+}
+

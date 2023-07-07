@@ -1,0 +1,9 @@
+
+services:
+  docs:
+    image: ghcr.io/mlambda-net/ml-site/docs
+    build:
+      context: .
+      dockerfile: ./docker/doc.docker
+    ports:
+      - "8080:80"

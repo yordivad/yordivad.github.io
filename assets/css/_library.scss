@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Slackey|Noto+Sans');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+$family: 'Roboto', 'sans-serif';
+$title-font: 'Slackey';
+$subtitle-font: 'Noto Sans';
+
+
+$first: #002642;
+$second: #ff2768;
+$third: #f8f9fc;
+$fourth: #710019;
+
+
+$white: #FFFFFF;
+$text: #1B2E3C;
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient($direction, $color-stops);
+  background: linear-gradient($direction, $color-stops);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

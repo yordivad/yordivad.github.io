@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+echo "serve"
+
+"${HOME}"/gems/bin/bundle install
+
+webpack --watch & "${HOME}"/gems/bin/bundle exec "${HOME}"/gems/bin/jekyll serve --watch

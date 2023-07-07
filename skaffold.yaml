@@ -1,0 +1,24 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+
+metadata:
+  name: ml-site
+
+
+build:
+  tagPolicy:
+    sha256: {}
+    
+  local:
+    push: true
+    
+  artifacts:
+    - image: ghcr.io/mlambda-net/ecolounge
+      context: .
+      docker:
+        dockerfile: Dockerfile
+        
+deploy:
+  docker:
+    useCompose: true
+    images: []
