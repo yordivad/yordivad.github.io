@@ -413,8 +413,8 @@ Append to the `# --- assertions ---` block in `script/check`, before the `--link
 
 ```bash
 assert_file "assets/css/main.css"
-assert_contains "assets/css/main.css" "--paper:#faf9f6"
-assert_contains "assets/css/main.css" "--accent:#0f4c5c"
+assert_contains "assets/css/main.css" "--paper: #faf9f6"
+assert_contains "assets/css/main.css" "--accent: #0f4c5c"
 assert_contains "assets/css/main.css" "prefers-color-scheme: dark"
 assert_contains "assets/css/main.css" "IBM Plex Mono"
 ```
@@ -715,12 +715,12 @@ code {
 
 // Entry (a role or a project) -----------------------------------------------
 
-.entry {
-  padding: 2.2rem 0;
-  border-top: 1px solid var(--rule);
-}
+.entry { padding: 2.2rem 0; }
 
-.entry:first-of-type { border-top: 0; }
+// Rule between consecutive entries only. Adjacent-sibling rather than
+// :first-of-type, which keys on tag name and breaks when a div.entry
+// follows article.entry siblings.
+.entry + .entry { border-top: 1px solid var(--rule); }
 
 .entry__meta { padding-top: 0.35rem; }
 
@@ -816,12 +816,9 @@ code {
 
 // Essay list ----------------------------------------------------------------
 
-.essay {
-  padding: 1.8rem 0;
-  border-top: 1px solid var(--rule);
-}
+.essay { padding: 1.8rem 0; }
 
-.essay:first-of-type { border-top: 0; }
+.essay + .essay { border-top: 1px solid var(--rule); }
 
 .essay__title {
   font-family: var(--display);
