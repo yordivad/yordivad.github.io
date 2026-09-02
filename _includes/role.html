@@ -1,0 +1,14 @@
+<article class="entry grid">
+  <div class="entry__meta">
+    <span class="entry__dates">{{ role.dates }}</span>
+    <span class="entry__place">{{ role.location }}</span>
+  </div>
+  <div class="entry__body">
+    <h2 class="entry__role">{{ role.role }} <span class="entry__org">— {{ role.org }}</span></h2>
+    <p class="entry__context">{{ role.context }}</p>
+    {{ role.content | markdownify }}
+    <ul class="tags">
+      {%- for t in role.tech %}<li class="tag">{{ t }}</li>{% endfor -%}
+    </ul>
+  </div>
+</article>
