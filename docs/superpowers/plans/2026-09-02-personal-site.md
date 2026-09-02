@@ -415,7 +415,7 @@ Append to the `# --- assertions ---` block in `script/check`, before the `--link
 assert_file "assets/css/main.css"
 assert_contains "assets/css/main.css" "--paper:#faf9f6"
 assert_contains "assets/css/main.css" "--accent:#0f4c5c"
-assert_contains "assets/css/main.css" "prefers-color-scheme:dark"
+assert_contains "assets/css/main.css" "prefers-color-scheme: dark"
 assert_contains "assets/css/main.css" "IBM Plex Mono"
 ```
 
