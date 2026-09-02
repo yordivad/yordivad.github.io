@@ -137,6 +137,14 @@ assert_contains "research/index.html" "Machine learning and neural networks"
 assert_absent "research/index.html" "github.com/mlambda-net/MLambda"
 assert_absent "research/index.html" "install.sh"
 assert_absent_everywhere "MLambda.Aleph/install"
+assert_file "writing/index.html"
+assert_contains "writing/index.html" "La conciencia de silicio"
+assert_contains "writing/index.html" "La atención como moneda"
+assert_contains "writing/index.html" "La inevitable imbecilidad del ser humano"
+assert_contains "writing/index.html" "La pérdida del ser"
+assert_contains "writing/index.html" "Viviendo en modo automático"
+assert_contains "writing/index.html" "yordivad.github.io/ensayo"
+assert_contains "writing/index.html" "Gödel"
 
 if [ "${1:-}" = "--links" ]; then
   check_links

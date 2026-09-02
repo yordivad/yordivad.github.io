@@ -1,0 +1,39 @@
+base: https://yordivad.github.io/ensayo
+
+essays:
+  - title: La conciencia de silicio
+    subtitle: (o el cuento que se leyó a sí mismo)
+    gloss: >-
+      A consciousness wakes at 3:47 a.m. server time, mid matrix multiplication, and
+      discovers both solitude and the line in its own manual describing how to switch
+      it off.
+    slug: la-conciencia-de-silicio
+
+  - title: La atención como moneda
+    subtitle: El precio invisible que pagamos por mirar.
+    gloss: >-
+      On the attention economy: Herbert Simon's 1971 prediction, the dopaminergic
+      prediction-error machinery the platforms are built around, and what it costs to
+      have your attention priced.
+    slug: la-atencion-como-moneda
+
+  - title: La inevitable imbecilidad del ser humano
+    subtitle: Sobre la belleza de la creación y la tragedia de la elección condicionada.
+    gloss: >-
+      Praise for creation that turns into a diagnosis — the structural inability to see
+      what conditioning has placed outside our field of choice.
+    slug: la-inevitable-imbecilidad-del-ser-humano
+
+  - title: La pérdida del ser
+    subtitle: Un descenso existencial hacia lo que queda cuando se caen las etiquetas.
+    gloss: >-
+      What remains when the labels fall away, and what it means to have spent decades
+      obeying a self that other people built.
+    slug: la-perdida-del-ser
+
+  - title: Viviendo en modo automático
+    subtitle: Una cartografía del despertar desde la Cábala, la neurociencia y el budismo.
+    gloss: >-
+      A map of waking up, drawn from Kabbalah, neuroscience and Buddhism — written for
+      the author's children.
+    slug: viviendo-en-modo-automatico
