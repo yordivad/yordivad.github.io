@@ -1,7 +1,6 @@
-#!/bin/zsh
-
-echo "serve"
-
-"${HOME}"/gems/bin/bundle install
-
-webpack --watch & "${HOME}"/gems/bin/bundle exec "${HOME}"/gems/bin/jekyll serve --watch
+#!/usr/bin/env bash
+# Build, then serve _site on http://localhost:4000 (no live reload).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+./script/check
+python -m http.server 4000 -d _site

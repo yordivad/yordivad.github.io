@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-echo "Building"
-
-webpack "$1"
-"${HOME}"/gems/bin/bundle exec "${HOME}"/gems/bin/jekyll build

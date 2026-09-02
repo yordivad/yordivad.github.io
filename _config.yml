@@ -1,56 +1,41 @@
-lang: en
-title: Roy Gonzalez.
+title: Roy Gonzalez
+tagline: Software architect · distributed systems · language and compiler research
 email: yordivad@gmail.com
-description: >- #Roy Gonzalez digital resume.
-permalink: pretty
-baseurl: ""
+description: >-
+  Roy Gonzalez — software architect with 18 years building distributed systems,
+  and the independent researcher behind MLambda: the Aleph language, the Genesis
+  compiler workbench, an actor-native database, and neuro-symbolic AI.
 url: "https://yordivad.github.io"
+baseurl: ""
+lang: en
 
-livereload: true
-limit_posts: 0
-quiet: true
-incremental: true
+linkedin: https://www.linkedin.com/in/yordivad/
+github: https://github.com/yordivad
+mlambda: https://mlambda.net
+essays: https://yordivad.github.io/ensayo/
 
+permalink: pretty
 
 collections:
-  views:
-    sort_by: weight
-    output: true
-
-
-
+  experience:
+    output: false
+  projects:
+    output: false
 
 sass:
+  sass_dir: _sass
   style: compressed
 
 plugins:
-  - jekyll-environment-variables
-  - jekyll-mermaid
-  - jekyll-liquify
-  - jekyll-pug
-
-
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
-  - package.json
-  - tsconfig.json
-  - webpack.config.js
-  - yarn.lock
-  - yarn-error.log
-  - assets
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - LICENSE.md
-  - LICENSE
   - README.md
-  - skaffold.yaml
-  - makefile
-  - compose.yaml
-  - .gitignore
+  - LICENSE
   - script
+  - docs
+  - vendor
   - .idea
