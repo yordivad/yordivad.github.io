@@ -117,20 +117,27 @@ VOLUME=jekyll-gems
 PASS=0
 FAIL=0
 
-host_pwd() { pwd -W 2>/dev/null || pwd; }
-
+# The repo is never bind-mounted: Docker Desktop on the dev machine cannot mount
+# the D: drive. Source is copied into a throwaway container and _site copied out.
 build() {
-  echo "==> building site (docker: $IMAGE)"
+  echo "==> building site (docker: $IMAGE, source copied in — no bind mount)"
   docker volume create "$VOLUME" >/dev/null
-  MSYS_NO_PATHCONV=1 docker run --rm \
-    -v "$(host_pwd)":/srv/jekyll \
+  rm -rf _site
+  local cid
+  cid=$(MSYS_NO_PATHCONV=1 docker create \
     -v "$VOLUME":/usr/local/bundle \
     -w /srv/jekyll "$IMAGE" \
     sh -c 'apt-get update -qq >/dev/null 2>&1 \
            && apt-get install -y -qq build-essential git >/dev/null 2>&1 \
            && bundle install --quiet \
-           && bundle exec jekyll build' 2>&1 | tee /tmp/jekyll-build.log
+           && bundle exec jekyll build')
+  tar --exclude=.git --exclude=_site --exclude=.superpowers --exclude=.jekyll-cache -cf - . \
+    | MSYS_NO_PATHCONV=1 docker cp - "$cid":/srv/jekyll
+  MSYS_NO_PATHCONV=1 docker start -a "$cid" 2>&1 | tee /tmp/jekyll-build.log
   local status=${PIPESTATUS[0]}
+  MSYS_NO_PATHCONV=1 docker cp "$cid":/srv/jekyll/_site ./_site >/dev/null 2>&1 || true
+  MSYS_NO_PATHCONV=1 docker cp "$cid":/srv/jekyll/Gemfile.lock ./Gemfile.lock >/dev/null 2>&1 || true
+  docker rm "$cid" >/dev/null
   if [ "$status" -ne 0 ]; then
     bad "build exited $status"
   elif grep -qiE "(Error|Warning|DEPRECATION|Liquid Exception)" /tmp/jekyll-build.log; then
@@ -204,22 +211,16 @@ echo "==> $PASS passed, $FAIL failed"
 [ "$FAIL" -eq 0 ]
 ```
 
-Create `script/serve`:
+Create `script/serve` (no live reload — the site is rebuilt by `script/check` and served
+statically, because the repo cannot be bind-mounted on the dev machine):
 
 ```bash
 #!/usr/bin/env bash
-# Serve the site locally on http://localhost:4000
+# Build, then serve _site on http://localhost:4000 (no live reload).
 set -euo pipefail
 cd "$(dirname "$0")/.."
-docker volume create jekyll-gems >/dev/null
-MSYS_NO_PATHCONV=1 docker run --rm -it -p 4000:4000 \
-  -v "$(pwd -W 2>/dev/null || pwd)":/srv/jekyll \
-  -v jekyll-gems:/usr/local/bundle \
-  -w /srv/jekyll ruby:3.3-slim \
-  sh -c 'apt-get update -qq >/dev/null 2>&1 \
-         && apt-get install -y -qq build-essential git >/dev/null 2>&1 \
-         && bundle install --quiet \
-         && bundle exec jekyll serve --host 0.0.0.0 --livereload'
+./script/check
+python -m http.server 4000 -d _site
 ```
 
 - [ ] **Step 2: Run the check to verify it fails**
@@ -375,7 +376,7 @@ layout: default
 ./script/check
 ```
 
-Expected: `4 passed, 0 failed` — build clean, `index.html` exists, contains "Roy Gonzalez", free of lorem ipsum, and no phone number anywhere in `_site`.
+Expected: `5 passed, 0 failed` — the build-clean line counts as a PASS, `index.html` exists, contains "Roy Gonzalez", free of lorem ipsum, and no phone number anywhere in `_site`.
 
 - [ ] **Step 9: Commit**
 
