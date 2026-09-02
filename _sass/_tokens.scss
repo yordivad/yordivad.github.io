@@ -2,31 +2,31 @@
 // block only has to restate the values that actually change.
 
 :root {
-  --paper:#faf9f6;
-  --ink:#242424;
-  --muted:#6b6b6b;
-  --rule:#ddd6c8;
-  --accent:#0f4c5c;
-  --accent-pale:rgba(15, 76, 92, 0.09);
+  --paper: #faf9f6;
+  --ink: #242424;
+  --muted: #6b6b6b;
+  --rule: #ddd6c8;
+  --accent: #0f4c5c;
+  --accent-pale: rgba(15, 76, 92, 0.09);
 
-  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
-  --display:"Cormorant Garamond", Georgia, serif;
-  --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --display: "Cormorant Garamond", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --measure:42rem;
-  --wide:64rem;
-  --gap:1.5rem;
+  --measure: 42rem;
+  --wide: 64rem;
+  --gap: 1.5rem;
 
-  color-scheme:light dark;
+  color-scheme: light dark;
 }
 
-@media (prefers-color-scheme:dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --paper:#14161a;
-    --ink:#e8e6e1;
-    --muted:#9a978f;
-    --rule:#2e3238;
-    --accent:#7fc4d4;
-    --accent-pale:rgba(127, 196, 212, 0.12);
+    --paper: #14161a;
+    --ink: #e8e6e1;
+    --muted: #9a978f;
+    --rule: #2e3238;
+    --accent: #7fc4d4;
+    --accent-pale: rgba(127, 196, 212, 0.12);
   }
 }
