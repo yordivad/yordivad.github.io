@@ -2099,7 +2099,7 @@ assert_contains "index.html" "og:title"
 
 Expected: these should already pass — `jekyll-sitemap` and `jekyll-seo-tag` were configured in Task 1. If any fail, the plugin is not loading; fix `_config.yml` before continuing rather than deleting the assertion.
 
-- [ ] **Step 3: Rewrite `.github/workflows/site.yml`**
+- [x] **Step 3: Rewrite `.github/workflows/site.yml`** — DONE EARLY as mini-task 8a (commit 542c455, run 33693019418 green) because the old workflow was auto-failing on deprecated upload-artifact@v3. Skip; the file already matches the YAML below.
 
 ```yaml
 name: Build and deploy site
