@@ -2157,13 +2157,43 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
+- [ ] **Step 3b: Make the link check count failures and tolerate LinkedIn's bot block**
+
+Two harness gaps surfaced during Task 6: `check_links` prints `FAIL` lines without incrementing
+`$FAIL`, so a dead link never fails the script; and `linkedin.com` answers HTTP `999` to every
+non-browser client, so it can never return 200 to curl. Replace the `check_links` function in
+`script/check` with:
+
+```bash
+check_links() {
+  echo "==> checking external links"
+  local url code
+  while read -r url; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 20 "$url")
+    case "$url" in
+      *linkedin.com*)
+        # LinkedIn returns 999 to non-browser clients; treat it as reachable.
+        if [ "$code" = "200" ] || [ "$code" = "999" ]; then ok "$code $url"; else bad "$code $url"; fi ;;
+      *)
+        if [ "$code" = "200" ]; then ok "$code $url"; else bad "$code $url"; fi ;;
+    esac
+  done < <(grep -rhoE 'href="https?://[^"]+"' _site \
+             | sed -E 's/href="//; s/"$//' \
+             | grep -vE 'fonts\.(googleapis|gstatic)\.com' \
+             | sort -u)
+}
+```
+
+The process substitution (`< <(...)`) keeps the loop in the current shell so `ok`/`bad` update
+the real `$PASS`/`$FAIL` counters — a `| while` pipeline would run in a subshell and lose them.
+
 - [ ] **Step 4: Run the full check including external links**
 
 ```bash
 ./script/check --links
 ```
 
-Expected: `0 failed`, and every external URL returns 200 — the four `*.mlambda.net` sites, `mlambda-net.github.io/MLambda.OS`, the two NuGet package pages, the five essay URLs, the LinkedIn profile and articles index, and GitHub.
+Expected: `0 failed`, and every external URL returns 200 — the four `*.mlambda.net` sites, `mlambda-net.github.io/MLambda.OS`, the two NuGet package pages, the five essay URLs, and GitHub — with the LinkedIn profile and articles index reported as `999` and counted as PASS. Note that the site's own canonical URLs (`https://yordivad.github.io/...`) are also collected by the grep; run this step **after** the push in Step 5 has deployed, or expect those to 404 until then.
 
 - [ ] **Step 5: Commit and push**
 
