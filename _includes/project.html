@@ -1,0 +1,18 @@
+<article class="entry grid">
+  <div class="entry__meta">
+    <span class="entry__dates">{{ project.kind }}</span>
+    <span class="entry__place">{{ project.status }}</span>
+  </div>
+  <div class="entry__body">
+    <h2 class="entry__role">{{ project.title }}</h2>
+    {{ project.content | markdownify }}
+    <ul class="tags">
+      {%- for t in project.tech %}<li class="tag">{{ t }}</li>{% endfor -%}
+    </ul>
+    {%- if project.links %}
+    <ul class="links">
+      {%- for l in project.links %}<li><a href="{{ l.url }}">{{ l.name }} →</a></li>{% endfor -%}
+    </ul>
+    {%- endif %}
+  </div>
+</article>
