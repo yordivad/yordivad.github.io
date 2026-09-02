@@ -1084,6 +1084,7 @@ assert_contains "work/index.html" "GPS Satelite"
 assert_contains "work/index.html" "Philosophy of Formal Science"
 assert_contains "work/index.html" "Computer Software Engineering"
 assert_contains "work/index.html" "Roy-Gonzalez-CV.pdf"
+assert_contains "work/index.html" "Machine learning and neural networks"
 assert_file "assets/Roy-Gonzalez-CV.pdf"
 ```
 
@@ -1093,7 +1094,7 @@ assert_file "assets/Roy-Gonzalez-CV.pdf"
 ./script/check
 ```
 
-Expected: 13 FAIL lines — `/work/` does not exist yet.
+Expected: 14 FAIL lines — `/work/` does not exist yet.
 
 - [ ] **Step 3: Copy in the CV PDF**
 
@@ -1293,6 +1294,17 @@ permalink: /work/
   </div>
 </div>
 
+<h2>What I work in</h2>
+
+<ul>
+  <li><strong>Architecture</strong> — TOGAF, domain-driven design, event-driven and actor-model systems, microservices, evolutionary architecture.</li>
+  <li><strong>Languages</strong> — C# and .NET first; Go, Rust, Python and C; TypeScript and React where the work reaches the browser.</li>
+  <li><strong>Compilers and formal methods</strong> — parser combinators, type systems, code generation to LLVM and WebAssembly, TLA+ and Z specification, model checking.</li>
+  <li><strong>Machine learning and neural networks</strong> — transformer architectures, graph attention, fast weights and meta-learning, LLM integration and retrieval-augmented generation; the neuro-symbolic work on the <a href="{{ '/research/' | relative_url }}">research</a> page.</li>
+  <li><strong>Data</strong> — PostgreSQL, MongoDB, SQL Server, Apache Spark, Mondrian, Analysis Services; and a distributed database of my own.</li>
+  <li><strong>Platform</strong> — Kubernetes, Helm, Terraform, AWS, Docker, CI/CD, observability.</li>
+</ul>
+
 <h2>Also</h2>
 
 <ul>
@@ -1308,7 +1320,7 @@ permalink: /work/
 ./script/check
 ```
 
-Expected: all 13 new assertions pass; roles appear in reverse-chronological order (QAT Global first, GPI last).
+Expected: all 14 new assertions pass; roles appear in reverse-chronological order (QAT Global first, GPI last).
 
 - [ ] **Step 8: Commit**
 
@@ -1355,6 +1367,7 @@ assert_contains "research/index.html" "data.mlambda.net"
 assert_contains "research/index.html" "actors.mlambda.net"
 assert_contains "research/index.html" "mvvm.mlambda.net"
 assert_contains "research/index.html" "nuget.org/packages/MLambda.Actors"
+assert_contains "research/index.html" "Machine learning and neural networks"
 # Integrity: no links into private repos, no installer commands that 404
 assert_absent "research/index.html" "github.com/mlambda-net/MLambda"
 assert_absent "research/index.html" "install.sh"
@@ -1367,7 +1380,7 @@ assert_absent_everywhere "MLambda.Aleph/install"
 ./script/check
 ```
 
-Expected: 13 FAIL lines for the missing page and content; the three integrity assertions pass vacuously (the file does not exist yet) and must keep passing after Step 4.
+Expected: 14 FAIL lines for the missing page and content; the three integrity assertions pass vacuously (the file does not exist yet) and must keep passing after Step 4.
 
 - [ ] **Step 3: Write the eight project documents**
 
@@ -1406,7 +1419,7 @@ featured: true
 title: Genesis
 kind: Compiler workbench and application factory
 status: published on NuGet
-tech: [C#, .NET 10, Parser combinators, EBNF, ASDL, TLA+, Symbolic algebra]
+tech: [C#, .NET 10, Parser combinators, EBNF, ASDL, TLA+, Symbolic algebra, LLM integration, RAG, Reinforcement learning]
 links:
   - name: Documentation
     url: https://genesis.mlambda.net
@@ -1426,6 +1439,11 @@ follows from the specification rather than from a prompt. The method borrows TOG
 exists, Gilb's Planguage for what must hold, and reactive DDD for what to build — with one
 rule doing the real work: **the language model acquires content, rules admit it, and what is
 missing is derived rather than guessed.**
+
+The reasoning layer, Thinker, is where the neural and the symbolic meet: pluggable LLM
+providers and retrieval-augmented generation acquire knowledge, a deterministic grammar
+formalises it, a forward-chaining engine proves over it, and a symbolic reinforcement learner
+improves what is believed over time. The LLM never answers — only proofs do.
 ```
 
 `_projects/03-actors.md`:
@@ -1491,7 +1509,7 @@ featured: true
 title: Hilbert — Incremental Strange Loop Transformer
 kind: Neuro-symbolic artificial intelligence
 status: research, not yet published
-tech: [Python, PyTorch, Modal logic, Temporal logic, Graph attention]
+tech: [Python, PyTorch, Transformers, Graph attention networks, Fast weights, Meta-learning (MAML), Modal logic, Temporal logic]
 ---
 
 Neuro-symbolic AI built on a claim worth testing: a transformer's attention layer is
@@ -1633,6 +1651,15 @@ backend work at TradeStation and a reactive framework of its own.
 <strong>Python</strong> is the neuro-symbolic research. The through-line is not the
 languages — it is compilers, type systems, formal verification and storage engines, which
 are the four things I keep coming back to.</p>
+
+<p><strong>Machine learning and neural networks</strong> run through the newer half of this
+work. Hilbert is a transformer architecture built from the inside — attention as an adaptive
+filter, fast weights updated per input, a MAML inner loop, graph attention for relational
+structure, and evolutionary search over memory populations. Genesis's Thinker module puts
+LLMs and retrieval-augmented generation to work as knowledge acquisition under a symbolic
+reasoner, with a reinforcement learner tuning what the system believes. The position behind
+both is the same: neural networks are extraordinary at acquiring content and poor at
+guaranteeing it, so the guarantee has to come from somewhere else.</p>
 ```
 
 - [ ] **Step 6: Run the check to verify it passes**
@@ -1888,8 +1915,8 @@ title: Roy Gonzalez
   independent research programme. I designed and implemented <strong>Aleph</strong>, a
   functional language with a native foreign-function interface; <strong>Genesis</strong>, a
   compiler workbench that model-checks a specification before it builds anything from it; an
-  actor-native distributed database; and a neuro-symbolic architecture that reasons across
-  five systems of logic.</p>
+  actor-native distributed database; and Hilbert, a neuro-symbolic transformer architecture
+  that reasons across five systems of logic and learns from each input without retraining.</p>
 
   <p>My degrees are in software engineering and in the philosophy of formal science, taken
   together. That pairing is the whole of my work: I am interested in what a system
