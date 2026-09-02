@@ -1,0 +1,94 @@
+.shell {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+// Masthead ------------------------------------------------------------------
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.6rem 0;
+  margin-bottom: 3.5rem;
+}
+
+.masthead__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.masthead__name {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.masthead__name:hover { background: none; color: var(--accent); }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover { color: var(--accent); background: none; }
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+}
+
+// Footer --------------------------------------------------------------------
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 6rem;
+  padding: 2.5rem 0 4rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+// Two-column grid used by /work/ and /research/ ------------------------------
+
+.grid {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 0; }
+  h1 { font-size: 2rem; }
+  .masthead { margin-bottom: 2.5rem; }
+}
