@@ -81,6 +81,16 @@ Jekyll on GitHub Pages, with the entire Node layer removed.
 **JavaScript:** none. The mobile navigation is CSS-only (checkbox toggle). If a later
 feature genuinely requires script, it is added as a small inline module, never a bundler.
 
+**Sass module system:** stylesheets use `@use`, never `@import`. Verified 2026-09-02: Dart
+Sass emits a deprecation warning for every `@import`, which would violate the warning-free
+build required by section 8. `@use` compiles silently.
+
+**Local build:** there is no Ruby toolchain on the development machine, so local builds run
+in Docker — `ruby:3.3-slim` with `build-essential` and `git`, and a named volume
+(`jekyll-gems`) mounted at `/usr/local/bundle` to cache gems. Verified working 2026-09-02:
+first run ~3 min, subsequent builds ~0.6 s. This is a developer convenience only; CI
+continues to use `ruby/setup-ruby` directly.
+
 ### 4.2 CI
 
 `.github/workflows/site.yml` collapses from ten steps to four: checkout → setup-ruby
@@ -96,18 +106,22 @@ _experience/          one file per role; front matter: company, role, dates, loc
                       context, tech[], weight; body = achievement bullets
 _projects/            one file per research project; front matter: title, kind, status,
                       version, links[], tech[], featured, weight; body = description
-_data/writing.yml     the six essays: title, subtitle, gloss (English), url
+_data/writing.yml     the five essays: title, subtitle, gloss (English), url
 _data/publications.yml LinkedIn articles: title, date, url
 _layouts/             default.html, page.html, home.html
 _includes/            head.html, nav.html, footer.html, role.html, project.html
 _sass/                _tokens.scss, _base.scss, _typography.scss, _layout.scss,
-                      _components.scss, _dark.scss
+                      _components.scss  (dark mode is a token override block inside
+                      _tokens.scss, not a separate file)
 assets/css/main.scss  front-matter-stubbed entry point
 assets/Roy-Gonzalez-CV.pdf
 ```
 
-Collections sort by an integer `weight` (ascending = most recent first), matching the
-`sort_by: weight` convention already used by `_views`.
+Collection documents carry an integer `weight` (ascending = most recent first). Ordering is
+applied in Liquid with `{% assign roles = site.experience | sort: "weight" %}`, **not** via a
+`sort_by` key in `_config.yml` — `sort_by` is not a native Jekyll collection option, and the
+existing `_views` config only appeared to work because those three files happened to sort
+correctly by filename.
 
 ## 5. Information architecture
 
@@ -117,7 +131,7 @@ Five pages, each with a real URL.
 
 - Name, positioning line, three-sentence intro.
 - **Proof strip** — every item verifiable: 18+ years · 8 companies · packages published on
-  NuGet · 4 live documentation sites · 6 published essays.
+  NuGet · 4 live documentation sites · 5 published essays.
 - Three doors: Work · Research · Writing.
 - Three or four highlighted items pulled from `_projects` (`featured: true`).
 
@@ -159,7 +173,7 @@ Languages surfaced across these, honestly attributed: **C#**, **Rust**, **Go**, 
 
 ### `/writing/` — Essays and publications
 
-The six essays at `yordivad.github.io/ensayo`, listed with Spanish title, Spanish subtitle,
+The five essays at `yordivad.github.io/ensayo`, listed with Spanish title, Spanish subtitle,
 and a one-line English gloss, linking out to the existing pages. No translation, no
 duplicated text. Below them, the LinkedIn publications (Gödel/Turing/AI, Actor Computational
 Model, the Torah code piece, and the rest).
@@ -215,7 +229,7 @@ These are binding on implementation:
 - `bundle exec jekyll build` completes with no warnings.
 - All five routes render locally and contain their expected content.
 - A link-check script confirms every external URL on the site returns HTTP 200 — including
-  the four `*.mlambda.net` doc sites, the six essay URLs, and the NuGet package pages.
+  the four `*.mlambda.net` doc sites, the five essay URLs, and the NuGet package pages.
 - Layout verified at 375px, 768px, and 1440px.
 - Both light and dark themes verified.
 - The GitHub Pages workflow succeeds on push to `main`.
