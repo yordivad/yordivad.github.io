@@ -97,6 +97,14 @@ assert_contains "assets/css/main.css" "--paper: #faf9f6"
 assert_contains "assets/css/main.css" "--accent: #0f4c5c"
 assert_contains "assets/css/main.css" "prefers-color-scheme: dark"
 assert_contains "assets/css/main.css" "IBM Plex Mono"
+assert_contains "index.html" "site-nav"
+assert_contains "index.html" "/work/"
+assert_contains "index.html" "/research/"
+assert_contains "index.html" "/writing/"
+assert_contains "index.html" "/about/"
+assert_contains "index.html" "yordivad@gmail.com"
+assert_contains "index.html" "linkedin.com/in/yordivad"
+assert_file "404.html"
 
 if [ "${1:-}" = "--links" ]; then
   check_links

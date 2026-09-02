@@ -4,8 +4,17 @@
   {%- include head.html -%}
 </head>
 <body>
+  <header class="masthead">
+    <div class="shell masthead__inner">
+      <a class="masthead__name" href="{{ '/' | relative_url }}">Roy Gonzalez</a>
+      {%- include nav.html -%}
+    </div>
+  </header>
+
   <main id="content">
     {{ content }}
   </main>
+
+  {%- include footer.html -%}
 </body>
 </html>
