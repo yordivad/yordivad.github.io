@@ -145,6 +145,15 @@ assert_contains "writing/index.html" "La pérdida del ser"
 assert_contains "writing/index.html" "Viviendo en modo automático"
 assert_contains "writing/index.html" "yordivad.github.io/ensayo"
 assert_contains "writing/index.html" "Gödel"
+assert_contains "index.html" "proof__num"
+assert_contains "index.html" "years building software"
+assert_contains "index.html" "documentation sites at mlambda.net"
+assert_contains "index.html" "Aleph"
+assert_file "about/index.html"
+assert_contains "about/index.html" "Philosophy of Formal Science"
+assert_contains "about/index.html" "Gödel"
+assert_absent_everywhere "Lorem"
+assert_absent_everywhere "jekyllrb.com"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
