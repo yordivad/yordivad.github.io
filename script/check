@@ -71,18 +71,20 @@ assert_absent_everywhere() {
 
 check_links() {
   echo "==> checking external links"
-  grep -rhoE 'href="https?://[^"]+"' _site \
-    | sed -E 's/href="//; s/"$//' \
-    | grep -vE 'fonts\.(googleapis|gstatic)\.com' \
-    | sort -u \
-    | while read -r url; do
-        code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 20 "$url")
-        if [ "$code" = "200" ]; then
-          echo "PASS  $code $url"
-        else
-          echo "FAIL  $code $url"
-        fi
-      done
+  local url code
+  while read -r url; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 20 "$url")
+    case "$url" in
+      *linkedin.com*)
+        # LinkedIn returns 999 to non-browser clients; treat it as reachable.
+        if [ "$code" = "200" ] || [ "$code" = "999" ]; then ok "$code $url"; else bad "$code $url"; fi ;;
+      *)
+        if [ "$code" = "200" ]; then ok "$code $url"; else bad "$code $url"; fi ;;
+    esac
+  done < <(grep -rhoE 'href="https?://[^"]+"' _site \
+             | sed -E 's/href="//; s/"$//' \
+             | grep -vE 'fonts\.(googleapis|gstatic)\.com' \
+             | sort -u)
 }
 
 build
@@ -154,6 +156,12 @@ assert_contains "about/index.html" "Philosophy of Formal Science"
 assert_contains "about/index.html" "Gödel"
 assert_absent_everywhere "Lorem"
 assert_absent_everywhere "jekyllrb.com"
+assert_file "sitemap.xml"
+assert_contains "sitemap.xml" "/work/"
+assert_contains "sitemap.xml" "/research/"
+assert_contains "sitemap.xml" "/writing/"
+assert_contains "sitemap.xml" "/about/"
+assert_contains "index.html" "og:title"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
