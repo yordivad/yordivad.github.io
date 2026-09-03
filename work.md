@@ -4,6 +4,7 @@ title: Work
 subtitle: Eighteen years of architecture and engineering — trading platforms, logistics integration, enterprise products and 3D geospatial tooling.
 description: Eighteen years of architecture and engineering — trading platforms, logistics integration, enterprise products and 3D geospatial tooling.
 permalink: /work/
+wide: true
 ---
 
 <p><a class="btn" href="{{ '/assets/Roy-Gonzalez-CV.pdf' | relative_url }}">Download CV (PDF)</a></p>

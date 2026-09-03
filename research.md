@@ -4,6 +4,7 @@ title: Research
 subtitle: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
 description: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
 permalink: /research/
+wide: true
 ---
 
 <p>Everything below is something I designed and built. Where there is a public artifact —
