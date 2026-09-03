@@ -2,6 +2,7 @@
 layout: page
 title: Research
 subtitle: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
+description: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
 permalink: /research/
 ---
 
@@ -18,7 +19,8 @@ rather than to source.</p>
 <p><strong>C#</strong> is where most of this is written — Genesis, Actors, Data and the UI
 framework are .NET 10. <strong>Rust</strong> and <strong>C</strong> carry the microkernel and
 the parts of Aleph that touch hardware. <strong>Go</strong> came from years of production
-backend work at TradeStation and a reactive framework of its own.
+backend work at TradeStation and <a href="https://github.com/mlambda-net/go-reactive">a
+reactive framework of its own</a>.
 <strong>Python</strong> is the neuro-symbolic research. The through-line is not the
 languages — it is compilers, type systems, formal verification and storage engines, which
 are the four things I keep coming back to.</p>

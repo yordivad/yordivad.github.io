@@ -2,6 +2,7 @@
 layout: page
 title: Work
 subtitle: Eighteen years of architecture and engineering — trading platforms, logistics integration, enterprise products and 3D geospatial tooling.
+description: Eighteen years of architecture and engineering — trading platforms, logistics integration, enterprise products and 3D geospatial tooling.
 permalink: /work/
 ---
 

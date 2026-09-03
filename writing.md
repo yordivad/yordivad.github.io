@@ -2,6 +2,7 @@
 layout: page
 title: Writing
 subtitle: Essays on consciousness, attention, formal systems and what it costs to live unexamined. In Spanish, with an English note on each.
+description: Essays on consciousness, attention, formal systems and what it costs to live unexamined. In Spanish, with an English note on each.
 permalink: /writing/
 ---
 
@@ -11,8 +12,8 @@ permalink: /writing/
 
 {% for e in site.data.writing.essays %}
 <article class="essay">
-  <h3 class="essay__title"><a href="{{ site.data.writing.base }}/{{ e.slug }}.html">{{ e.title }}</a></h3>
-  <p class="essay__subtitle">{{ e.subtitle }}</p>
+  <h3 class="essay__title" lang="es"><a href="{{ site.data.writing.base }}/{{ e.slug }}.html">{{ e.title }}</a></h3>
+  <p class="essay__subtitle" lang="es">{{ e.subtitle }}</p>
   <p class="essay__gloss">{{ e.gloss }}</p>
 </article>
 {% endfor %}

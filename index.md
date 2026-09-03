@@ -1,10 +1,11 @@
 ---
 layout: home
 title: Roy Gonzalez
+description: Roy Gonzalez — software architect with 18 years in distributed systems, and the researcher behind MLambda, Aleph, Genesis and Hilbert.
 ---
 
 <div class="prose">
-  <img class="portrait" src="{{ '/images/me/roy.svg' | relative_url }}" alt="">
+  <img class="portrait" src="{{ '/images/me/roy.svg' | relative_url }}" alt="Illustrated portrait of Roy Gonzalez">
 
   <h1>Roy Gonzalez</h1>
 
@@ -12,7 +13,7 @@ title: Roy Gonzalez
 
   <p>For eighteen years I have built systems that have to stay correct under load — a
   mission-critical trading platform, logistics integration across DHL, enterprise analytics,
-  3D geospatial tooling — mostly in C#, Go and Rust, on Kubernetes, at companies from
+  3D geospatial tooling — mostly in C# and Go, on Kubernetes, at companies from
   Accenture to TradeStation.</p>
 
   <p>Alongside that I run <a href="{{ '/research/' | relative_url }}">MLambda</a>, an
@@ -35,15 +36,15 @@ title: Roy Gonzalez
 
   <ul class="doors">
     <li><a class="door" href="{{ '/work/' | relative_url }}">
-      <h3>Work →</h3>
+      <h2>Work →</h2>
       <p>Eighteen years, eight companies, and what I actually did at each.</p>
     </a></li>
     <li><a class="door" href="{{ '/research/' | relative_url }}">
-      <h3>Research →</h3>
+      <h2>Research →</h2>
       <p>A language, a compiler workbench, a distributed database, a microkernel, and neuro-symbolic AI.</p>
     </a></li>
     <li><a class="door" href="{{ '/writing/' | relative_url }}">
-      <h3>Writing →</h3>
+      <h2>Writing →</h2>
       <p>Essays on consciousness, attention and formal systems.</p>
     </a></li>
   </ul>
@@ -53,8 +54,8 @@ title: Roy Gonzalez
   {% assign featured = site.projects | where: "featured", true | sort: "weight" %}
   <ul class="doors">
   {% for p in featured %}
-    <li><a class="door" href="{{ '/research/' | relative_url }}">
-      <h3>{{ p.title }}</h3>
+    <li><a class="door" href="{{ '/research/' | relative_url }}#{{ p.title | slugify }}">
+      <h2>{{ p.title }}</h2>
       <p>{{ p.kind }} · {{ p.status }}</p>
     </a></li>
   {% endfor %}

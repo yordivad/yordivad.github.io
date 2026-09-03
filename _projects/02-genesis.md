@@ -10,6 +10,8 @@ links:
     url: https://genesis.mlambda.net
   - name: NuGet
     url: https://www.nuget.org/packages/MLambda.Genesis.Parser
+  - name: All Genesis packages
+    url: https://www.nuget.org/packages?q=MLambda.Genesis
 ---
 
 Eleven packages for building languages: a monadic parser-combinator library with LINQ

@@ -1,7 +1,7 @@
 ---
 weight: 7
 role: Software Engineer
-org: Isthmus — DHL account
+org: Isthmus (DHL account)
 dates: Jan 2010 – Sep 2013
 location: Costa Rica
 context: Logistics integration systems

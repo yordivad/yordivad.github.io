@@ -10,4 +10,4 @@ tech: [TOGAF, EPiServer, .NET, C#, Angular, React, SQL]
 
 - Designed a modular EPiServer architecture whose reusable component library was shared across multiple sites, driving reuse, interoperability and consistency.
 - Applied TOGAF to give business, software and infrastructure a single architectural view, and matured the application lifecycle with Scrum, SOLID, TDD, continuous integration and Octopus-based deployment.
-- Contributed to an engagement that closed a contract worth over $1M in annual sales.
+- Contributed to the engagement that won the client a major new multi-year contract.
