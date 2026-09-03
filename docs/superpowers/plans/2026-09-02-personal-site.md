@@ -14,7 +14,7 @@
 
 These apply to every task. Copied verbatim from the spec.
 
-- **No JavaScript.** The mobile navigation is CSS-only (checkbox toggle). No bundler, ever.
+- **No JavaScript.** The navigation is plain links that wrap; no toggle. No bundler, ever.
 - **Sass uses `@use`, never `@import`.** Dart Sass emits a deprecation warning for every `@import`, and the build must be warning-free.
 - **Collection ordering is done in Liquid** — `{% assign roles = site.experience | sort: "weight" %}` — never via a `sort_by` key in `_config.yml`, which is not a native Jekyll option.
 - **Every research claim links to something a stranger can check** — a live documentation site or a NuGet package page.
@@ -23,7 +23,7 @@ These apply to every task. Copied verbatim from the spec.
 - **Do not reproduce the Aleph installer commands.** `mlambda-net.github.io/MLambda.Aleph/` returns 404, so `curl -fsSL .../install.sh | sh` does not resolve. Link the syntax reference on `genesis.mlambda.net` instead.
 - **Status labels are honest**: "research", "v1.2.0", "in development".
 - **Roles and dates come from the CV PDF**, not from the stale `_views/experience.md`.
-- **Contact is email + LinkedIn only.** The phone number `+506 71105675` must not appear anywhere in `_site`.
+- **Contact is email + LinkedIn only.** The phone number formerly rendered by `info.pug` must not appear anywhere in `_site`.
 - **Exact palette:** paper `#faf9f6`, ink `#242424`, muted `#6b6b6b`, rule `#ddd6c8`, accent `#0f4c5c`.
 - **Exact counts for the proof strip:** 18+ years, 8 companies, 4 documentation sites on mlambda.net, 5 published essays.
 - Commit directly on `main`. No feature branches. No `Co-Authored-By` trailer.
@@ -200,7 +200,8 @@ build
 assert_file "index.html"
 assert_contains "index.html" "Roy Gonzalez"
 assert_absent "index.html" "Lorem markdownum"
-assert_absent_everywhere "71105675"
+assert_absent_everywhere "+506"
+assert_absent_everywhere "tel:"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
@@ -1037,7 +1038,7 @@ permalink: /404.html
 ./script/check
 ```
 
-Expected: all assertions pass. `assert_absent_everywhere "71105675"` still passes, confirming the phone number did not survive the footer rewrite.
+Expected: all assertions pass. `assert_absent_everywhere "+506"` and `assert_absent_everywhere "tel:"` still pass, confirming the phone number did not survive the footer rewrite.
 
 - [ ] **Step 9: Commit**
 

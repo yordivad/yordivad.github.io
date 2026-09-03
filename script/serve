@@ -3,4 +3,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 ./script/check
-python -m http.server 4000 -d _site
+"$(command -v python3 || command -v python)" -m http.server 4000 -d _site

@@ -78,8 +78,9 @@ Jekyll on GitHub Pages, with the entire Node layer removed.
 **Styling:** hand-written Sass compiled by Jekyll's built-in Sass support. Bulma and
 `bulma-carousel` are dropped.
 
-**JavaScript:** none. The mobile navigation is CSS-only (checkbox toggle). If a later
-feature genuinely requires script, it is added as a small inline module, never a bundler.
+**JavaScript:** none. The navigation is four plain links that wrap beneath the name on
+narrow viewports — no toggle of any kind. If a later feature genuinely requires script, it
+is added as a small inline module, never a bundler.
 
 **Sass module system:** stylesheets use `@use`, never `@import`. Verified 2026-09-02: Dart
 Sass emits a deprecation warning for every `@import`, which would violate the warning-free
