@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+eyebrow: Biography
 subtitle: How a degree in the philosophy of formal science turned into a programming language.
 description: How a degree in the philosophy of formal science turned into a programming language.
 permalink: /about/

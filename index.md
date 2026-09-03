@@ -4,12 +4,25 @@ title: Roy Gonzalez
 description: Roy Gonzalez — software architect with 18 years in distributed systems, and the researcher behind MLambda, Aleph, Genesis and Hilbert.
 ---
 
+<section class="hero">
+  <div class="hero__text">
+    <span class="eyebrow">Software architect · Heredia, Costa Rica</span>
+    <h1>Roy Gonzalez</h1>
+    <p class="hero__tagline">I build distributed systems that have to stay <em>provably</em> correct — and the languages, compilers and neuro-symbolic tools that make that the default.</p>
+    <ul class="hero__actions">
+      <li><a class="btn btn--primary" href="{{ '/work/' | relative_url }}">See the work</a></li>
+      <li><a class="btn" href="{{ '/assets/Roy-Gonzalez-CV.pdf' | relative_url }}">Download CV</a></li>
+      <li><a class="btn btn--ghost" href="{{ site.linkedin }}">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="hero__portrait">
+    <div class="portrait"><img src="{{ '/images/me/roy.svg' | relative_url }}" alt="Illustrated portrait of Roy Gonzalez" width="240" height="240"></div>
+  </div>
+</section>
+
 <div class="prose">
-  <img class="portrait" src="{{ '/images/me/roy.svg' | relative_url }}" alt="Illustrated portrait of Roy Gonzalez">
 
-  <h1>Roy Gonzalez</h1>
-
-  <p class="lede">Software architect · distributed systems · language and compiler research</p>
+  <p class="lede">Eighteen years of systems that could not be wrong. One research programme about making that ordinary.</p>
 
   <p>For eighteen years I have built systems that have to stay correct under load — a
   mission-critical trading platform, logistics integration across DHL, enterprise analytics,
@@ -33,7 +46,9 @@ description: Roy Gonzalez — software architect with 18 years in distributed sy
     <li><span class="proof__num">4</span><span class="proof__label">documentation sites at mlambda.net</span></li>
     <li><span class="proof__num">5</span><span class="proof__label">published essays</span></li>
   </ul>
+</div>
 
+<div class="wide">
   <ul class="doors">
     <li><a class="door" href="{{ '/work/' | relative_url }}">
       <h2>Work →</h2>

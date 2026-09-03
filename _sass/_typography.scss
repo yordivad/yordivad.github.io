@@ -1,45 +1,100 @@
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
-  line-height: 1.15;
-  margin: 0 0 0.6em;
-}
-
-h1 { font-size: 2.6rem; letter-spacing: 0.01em; }
-h2 { font-size: 1.7rem; margin-top: 2.4em; }
-h3 { font-size: 1.2rem; margin-top: 1.8em; }
-
-p { margin: 0 0 1.3em; }
-
-.lede {
-  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.55em;
   color: var(--ink);
 }
 
+h1 {
+  font-size: clamp(2.6rem, 5.5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  margin-top: 2.6em;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: 0.45em;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-top: 1.8em;
+}
+
+p { margin: 0 0 1.3em; }
+
+.prose p,
+.prose li { color: var(--ink-2); }
+
+.prose strong { color: var(--ink); font-weight: 600; }
+
+.lede {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.eyebrow,
 .mono,
 .entry__dates,
 .tag,
 .status,
-.proof__num {
+.site-nav a,
+.links,
+.btn,
+.proof__label {
   font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: 0.6rem;
 }
 
 .muted { color: var(--muted); }
 
 blockquote {
-  margin: 2rem 0;
-  padding-left: 1.2rem;
-  border-left: 2px solid var(--rule);
-  color: var(--muted);
+  margin: 2.2rem 0;
+  padding: 0.4rem 0 0.4rem 1.4rem;
+  border-left: 2px solid var(--gold);
+  color: var(--ink-2);
+  font-family: var(--serif);
+  font-size: 1.25rem;
   font-style: italic;
+  line-height: 1.5;
 }
 
 code {
   font-family: var(--mono);
   font-size: 0.85em;
   background: var(--accent-pale);
-  padding: 0.1em 0.35em;
-  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
 }

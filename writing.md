@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Writing
+eyebrow: Essays
 subtitle: Essays on consciousness, attention, formal systems and what it costs to live unexamined. In Spanish, with an English note on each.
 description: Essays on consciousness, attention, formal systems and what it costs to live unexamined. In Spanish, with an English note on each.
 permalink: /writing/

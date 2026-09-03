@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Research
+eyebrow: MLambda · independent research
 subtitle: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
 description: MLambda — an independent research programme in language design, distributed systems and neuro-symbolic AI, running since 2019.
 permalink: /research/

@@ -1,62 +1,160 @@
+// Hero (home) -----------------------------------------------------------------
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
+  padding: 1.5rem 0 3rem;
+}
+
+.hero__text { max-width: var(--measure); }
+
+.hero h1 { margin-bottom: 0.35em; }
+
+.hero__tagline {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--ink-2);
+  margin: 0 0 1.8rem;
+}
+
+.hero__tagline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.portrait {
+  width: clamp(10rem, 22vw, 15rem);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--gold), var(--accent) 60%, var(--accent-2));
+  box-shadow: var(--shadow-lift);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--paper-2);
+}
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 0; }
+  .hero__portrait { order: -1; }
+}
+
 // Proof strip ---------------------------------------------------------------
 
 .proof {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
   list-style: none;
   margin: 2.5rem 0 0;
-  padding: 1.4rem 0 0;
-  border-top: 1px solid var(--rule);
+  padding: 0;
 }
 
-.proof li { margin-bottom: 1rem; }
+.proof li {
+  padding: 1.1rem 1.2rem;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
 .proof__num {
   display: block;
-  color: var(--accent);
-  font-size: 1.35rem;
+  font-family: var(--display);
+  font-size: 2.2rem;
   font-weight: 500;
-  letter-spacing: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(120deg, var(--accent), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.35rem;
 }
 
 .proof__label {
   display: block;
   color: var(--muted);
-  font-size: 0.85rem;
 }
 
-// Doors ---------------------------------------------------------------------
+// Doors (cards) ---------------------------------------------------------------
 
 .doors {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 3rem 0;
   padding: 0;
   list-style: none;
 }
 
 .door {
+  position: relative;
   display: block;
+  height: 100%;
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: var(--paper-2);
   border: 1px solid var(--rule);
-  padding: 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   text-decoration: none;
   color: var(--ink);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+  opacity: 0.85;
 }
 
 .door:hover {
-  background: var(--accent-pale);
-  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
 }
 
-.door h2 { margin: 0 0 0.4em; font-size: 1.15rem; }
-.door p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.door h2 {
+  margin: 0 0 0.45em;
+  font-size: 1.4rem;
+}
+
+.door h2::after { display: none; }
+
+.door p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
 
 // Entry (a role or a project) -----------------------------------------------
 
 .entry {
-  padding: 2.2rem 0;
+  position: relative;
+  padding: 2.4rem 0;
 }
 
 // Rule between consecutive entries only. Adjacent-sibling rather than
@@ -64,38 +162,46 @@
 // follows article.entry siblings.
 .entry + .entry { border-top: 1px solid var(--rule); }
 
-.entry__meta { padding-top: 0.35rem; }
+.entry__meta { padding-top: 0.5rem; }
 
 .entry__dates {
   display: block;
-  color: var(--muted);
+  color: var(--gold);
 }
 
 .entry__place {
   display: block;
   color: var(--muted);
   font-size: 0.85rem;
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
 }
 
 .entry__role {
   font-family: var(--display);
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
   margin: 0;
 }
 
+.entry__role::after { display: none; }
+
 .entry__org {
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: var(--serif);
+  font-style: italic;
 }
 
 .entry__context {
   color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.1rem;
   font-style: italic;
-  margin: 0.3rem 0 1rem;
+  margin: 0.4rem 0 1rem;
 }
+
+.entry__body p,
+.entry__body li { color: var(--ink-2); }
 
 .entry__body ul {
   margin: 0 0 1rem;
@@ -109,7 +215,7 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -117,17 +223,18 @@
 
 .tag {
   border: 1px solid var(--rule);
+  background: var(--paper-2);
   color: var(--muted);
-  padding: 0.15rem 0.5rem;
-  border-radius: 2px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
 }
 
 .status {
   display: inline-block;
-  background: var(--accent-pale);
-  color: var(--accent);
-  padding: 0.15rem 0.5rem;
-  border-radius: 2px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
   margin-bottom: 0.6rem;
 }
 
@@ -135,15 +242,31 @@
 
 .btn {
   display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.8rem;
   border: 1px solid var(--accent);
   color: var(--accent);
-  padding: 0.5rem 1rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
   text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover { background: var(--accent); color: var(--paper); }
+.btn:hover {
+  background: var(--accent);
+  color: var(--paper);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn--primary:hover { background: var(--accent); color: #fff; }
+
+.btn--ghost { border-color: var(--rule); color: var(--ink); }
+.btn--ghost:hover { background: var(--paper-2); color: var(--accent); border-color: var(--accent); }
 
 .links {
   display: flex;
@@ -152,34 +275,33 @@
   list-style: none;
   margin: 1rem 0 0;
   padding: 0;
-  font-family: var(--mono);
-  font-size: 0.78rem;
 }
+
+.links a { text-decoration: none; }
 
 // Essay list ----------------------------------------------------------------
 
-.essay {
-  padding: 1.8rem 0;
-}
+.essay { padding: 2rem 0; }
 
 .essay + .essay { border-top: 1px solid var(--rule); }
 
 .essay__title {
   font-family: var(--display);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   margin: 0 0 0.2em;
 }
 
+.essay__title::after { display: none; }
 .essay__title a { text-decoration: none; }
+.essay__title a:hover { color: var(--accent-2); }
 
-.essay__subtitle { color: var(--muted); font-style: italic; margin: 0 0 0.5em; }
-.essay__gloss { margin: 0; font-size: 0.95rem; }
-
-// Portrait ------------------------------------------------------------------
-
-.portrait {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
+.essay__subtitle {
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  margin: 0 0 0.5em;
 }
+
+.essay__gloss { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
