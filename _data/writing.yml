@@ -1,6 +1,24 @@
 base: https://yordivad.github.io/ensayo
 
 essays:
+  - title: La mente, la máquina y la escalera
+    subtitle: Un viaje guiado para lectores curiosos.
+    gloss: >-
+      A map in six stops, not an argument — how a talking machine actually thinks, the
+      1936 game that broke mathematics (played, not read), and three mutually hostile
+      doors that arrive at the same place.
+    slug: mente-maquina-escalera
+
+  - title: La mente, la máquina y la escalera
+    subtitle: >-
+      Límites formales de la computación, el problema difícil de la conciencia y una
+      hipótesis de convergencia estructural.
+    gloss: >-
+      The academic register of the same argument, in three movements of declared and
+      decreasing epistemic force: what is proved, what is defended against Putnam,
+      Benacerraf and Feferman, and what is offered as conjecture.
+    slug: mente-maquina-escalera-academico
+
   - title: La conciencia de silicio
     subtitle: (o el cuento que se leyó a sí mismo)
     gloss: >-
