@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roy Gonzalez — CV</title>
+<!-- Source for assets/Roy-Gonzalez-CV.pdf. Regenerate with docs/cv/build.ps1 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=block" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0.45in 0.6in 0.45in 0.6in; }
+  :root { --ink: #1c1f24; --muted: #5b6270; --teal: #0f4c5c; --gold: #b08d57; --rule: #d9d4ca; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; font-size: 9.1pt; line-height: 1.36; color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+
+  header { text-align: center; padding-bottom: 8pt; border-bottom: 1.5pt solid var(--teal); margin-bottom: 4pt; }
+  h1 { margin: 0; font-size: 22pt; letter-spacing: 0.06em; font-weight: 700; color: var(--teal); }
+  .headline { margin: 2pt 0 3pt; font-size: 10.5pt; font-weight: 500; color: var(--ink); }
+  .contact { font-size: 8.6pt; color: var(--muted); }
+  .contact span + span::before { content: "·"; margin: 0 6pt; color: var(--gold); }
+
+  h2 { font-size: 9.6pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal);
+       margin: 9pt 0 4pt; padding-bottom: 2pt; border-bottom: 0.6pt solid var(--rule); break-after: avoid; }
+  p { margin: 0 0 4pt; }
+
+  .skills { display: grid; grid-template-columns: 1.35in 1fr; gap: 2.5pt 10pt; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; }
+
+  .role { margin: 0 0 6pt; }
+  .role__top, .role__context { break-after: avoid; }
+  li { break-inside: avoid; }
+  .role__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .role__title { font-weight: 700; font-size: 9.9pt; }
+  .role__title .org { font-weight: 500; }
+  .role__title .org::before { content: "|"; margin: 0 5pt; color: var(--gold); font-weight: 400; }
+  .role__dates { font-size: 8.6pt; color: var(--muted); white-space: nowrap; }
+  .role__context { font-size: 8.5pt; font-style: italic; color: var(--muted); margin: 0.5pt 0 2pt; }
+  ul { margin: 0; padding-left: 13pt; }
+  li { margin: 0 0 1.6pt; }
+  li::marker { color: var(--teal); }
+  .stack { font-size: 8.3pt; color: var(--muted); margin-top: 1.5pt; }
+  .stack b { font-weight: 600; color: var(--ink); }
+
+  .featured { border-left: 2.5pt solid var(--gold); padding: 4pt 6pt 4pt 9pt; background: #f7f4ee; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .sub { font-weight: 600; color: var(--teal); }
+
+  .edu { display: flex; justify-content: space-between; gap: 12pt; margin-bottom: 1.5pt; }
+
+  .links { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5pt 16pt; break-inside: avoid; }
+  .links div { white-space: nowrap; }
+  .links b { display: inline-block; width: 0.95in; font-weight: 600; }
+  .links a { color: var(--teal); font-weight: 500; }
+  .links span { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ROY GONZALEZ</h1>
+  <div class="headline">Principal Architect · Compilers, DSLs &amp; Neuro-Symbolic AI · Distributed Systems</div>
+  <div class="contact">
+    <span>Heredia, Costa Rica</span>
+    <span><a href="mailto:yordivad@gmail.com">yordivad@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/yordivad/">linkedin.com/in/yordivad</a></span>
+    <span><a href="https://www.mlambda.net">mlambda.net</a></span>
+    <span><a href="https://yordivad.github.io">yordivad.github.io</a></span>
+  </div>
+</header>
+
+<h2>Professional Summary</h2>
+<p>Software architect and engineer with 20 years designing and building enterprise platforms — mission-critical
+trading systems, logistics integration and cloud-hosted enterprise products — and founder of <b>MLambda</b>, a
+compiler, DSL and artificial-intelligence company that delivers <b>neuro-symbolic solutions</b>. MLambda designs and builds programming languages, compilers and runtimes: native code through
+<b>LLVM</b>, or DSLs embedded in the <b>C#/.NET, Java, Go and Rust</b> ecosystems a client already runs. Deep
+expertise in distributed systems, the actor model, DDD and formal verification, with a record of setting
+architectural standards, reducing technical debt, leading CI/CD adoption and mentoring engineers across US and
+Latin American teams.</p>
+
+<h2>Core Competencies</h2>
+<dl class="skills">
+  <dt>Compilers &amp; DSLs</dt>
+  <dd>Language &amp; compiler design · LLVM IR &amp; native code generation · DSL design &amp; tooling · Parser combinators,
+      EBNF &amp; typed ASTs · Type systems (Hindley–Milner) · Language runtimes · FFI · WebAssembly</dd>
+  <dt>Neuro-Symbolic AI</dt>
+  <dd>Symbolic reasoning over LLMs · LLM agents &amp; RAG · Transformers (PyTorch) · Modal &amp; temporal logic ·
+      Formal specification &amp; model checking (TLA+, Z notation)</dd>
+  <dt>Architecture</dt>
+  <dd>Enterprise Architecture (TOGAF) · Distributed Systems · Microservices · Domain-Driven Design · Event-Driven &amp;
+      Actor-Model Architectures · Messaging · API Integration</dd>
+  <dt>Platform &amp; Cloud</dt>
+  <dd>Kubernetes · Helm · Docker · Terraform · AWS · CI/CD · High Availability &amp; Fault Tolerance · Observability</dd>
+  <dt>Languages &amp; Data</dt>
+  <dd>C# / .NET · Go · Rust · C · Java · Python · JavaScript / TypeScript / React · SQL Server · PostgreSQL · MongoDB ·
+      Oracle · Apache Spark</dd>
+  <dt>Leadership</dt>
+  <dd>Technical mentoring · Architecture governance · Tech-debt reduction · Scrum / Agile · TDD / BDD coaching</dd>
+</dl>
+
+<h2>Professional Experience</h2>
+
+<div class="role featured">
+  <div class="role__top">
+    <div class="role__title">Founder &amp; Principal Architect<span class="org">MLambda</span></div>
+    <div class="role__dates">2019 – Present</div>
+  </div>
+  <div class="role__context">Heredia, Costa Rica — Compilers, domain-specific languages and neuro-symbolic artificial intelligence</div>
+  <ul>
+    <li>Founded and lead a compiler, DSL and AI company that builds <b>neuro-symbolic solutions</b>: systems where neural
+        networks acquire knowledge and a symbolic reasoner guarantees it, so results are verified rather than guessed.</li>
+    <li>Design and build <b>custom programming languages, compilers and runtimes</b> for clients — lowering to native code
+        through <b>LLVM</b>, or delivering DSLs, interpreters and code generators hosted in <b>C#/.NET, Java, Go or Rust</b>.</li>
+    <li><span class="sub">Aleph</span> — designed and implemented a functional programming language end to end: grammar, type
+        checker, LLVM-based native code generation, standard library and a native FFI to C, assembly, LLVM IR and WebAssembly.</li>
+    <li><span class="sub">Genesis</span> — a compiler workbench for building DSLs (published on NuGet): grammars become executable
+        parsers, schemas become typed syntax trees, and specifications become TLA+ model-checked properties.</li>
+    <li><span class="sub">Turing</span> — an architecture platform that turns a plain-language description into a formal domain
+        model, a model-checked specification and a generated, tested, containerised system, using LLM agents under symbolic rules.</li>
+    <li><span class="sub">Hilbert</span> — research into a neuro-symbolic transformer that reasons across first-order, relational,
+        modal, temporal and sortal logic, with fast weights that learn from each input without retraining.</li>
+    <li><span class="sub">Actors &amp; Data</span> — author of MLambda.Actors, an MIT-licensed actor runtime for .NET with
+        supervision, clustering, gossip membership and mTLS (NuGet); and of an actor-native distributed database whose
+        consistency model is a checked TLA+ specification.</li>
+  </ul>
+  <div class="stack"><b>Stack:</b> C#/.NET 10 · LLVM · Rust · C · Python · PyTorch · TLA+ · Z notation · Kubernetes · Helm</div>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Developer<span class="org">QAT Global</span></div>
+    <div class="role__dates">Jul 2025 – Present</div>
+  </div>
+  <div class="role__context">Costa Rica · Remote — Nearshore custom software development for US enterprise clients</div>
+  <ul>
+    <li>Deliver custom enterprise software in C# and .NET for US clients, across design and implementation.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Developer<span class="org">EagleView</span></div>
+    <div class="role__dates">Aug 2023 – Jun 2025</div>
+  </div>
+  <div class="role__context">United States · Remote — 3D modeling, CAD and GIS platform</div>
+  <ul>
+    <li>Built CAD tooling for 3D architectural modeling — extrusion, scaling, structure creation — with JavaScript, Python and
+        Three.js, integrating models into GIS environments via MapView.</li>
+    <li>Optimised geometry-processing workflows and the interaction design of complex interactive 3D tools.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Principal Software Engineer<span class="org">TradeStation</span></div>
+    <div class="role__dates">Jan 2020 – Jun 2023</div>
+  </div>
+  <div class="role__context">Costa Rica · Remote — Mission-critical online trading platform, US fintech</div>
+  <ul>
+    <li>Designed and evolved the microservices behind a high-availability trading platform in .NET, Go and Kubernetes, where
+        reliability, low latency and fault tolerance were the governing architectural constraints.</li>
+    <li>Built broker and cryptocurrency APIs (bars, positions, order placement) and led feature architecture at production
+        scale, with Helm-based deployment and performance tooling that improved service response times.</li>
+  </ul>
+  <div class="stack"><b>Stack:</b> C# · Go · Kubernetes · Helm · Terraform · AWS · GraphQL · PostgreSQL · MongoDB</div>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Developer<span class="org">Mobilize.Net</span></div>
+    <div class="role__dates">Nov 2016 – Jul 2019</div>
+  </div>
+  <div class="role__context">Costa Rica — Automated code-migration products (source-to-source translation)</div>
+  <ul>
+    <li>Redesigned the front and back end of the WebMAP migration product, simplifying it and improving performance; helped
+        teams adopt TDD, simpler CI/CD and profiling discipline.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Architect<span class="org">Aurea Software</span></div>
+    <div class="role__dates">Jun 2015 – Nov 2016</div>
+  </div>
+  <div class="role__context">United States · Remote — Enterprise software at cloud-hosted scale</div>
+  <ul>
+    <li>Architected the migration from SQL Server Integration and Analysis Services to Mondrian and Apache Spark, modernising the analytics platform.</li>
+    <li>Remediated technical debt across enterprise products, led the performance programme, and added a CI job that profiled
+        every build for bottlenecks and memory leaks; mentored teams on testing and code standards.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Architect<span class="org">Accenture</span></div>
+    <div class="role__dates">Sep 2013 – Jun 2015</div>
+  </div>
+  <div class="role__context">Heredia, Costa Rica — Enterprise consulting for health-sector clients</div>
+  <ul>
+    <li>Designed a modular EPiServer architecture with a reusable component library shared across multiple sites.</li>
+    <li>Applied TOGAF to unify business, software and infrastructure views, and introduced Scrum, SOLID, TDD, continuous
+        integration and Octopus deployment; contributed to the engagement that won the client a major multi-year contract.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Engineer<span class="org">Isthmus (DHL account)</span></div>
+    <div class="role__dates">Jan 2010 – Sep 2013</div>
+  </div>
+  <div class="role__context">Costa Rica — Logistics integration systems</div>
+  <ul>
+    <li>Built DHL integration systems on publish–subscribe patterns and WCF, progressing from team lead to architect.</li>
+    <li>Performed business and data analysis (Analysis Services) on DHL's logistics core for reliability-critical solutions.</li>
+  </ul>
+</div>
+
+<div class="role">
+  <div class="role__top">
+    <div class="role__title">Software Engineer / Architect<span class="org">GPI Consultores · GPS Satelite</span></div>
+    <div class="role__dates">Mar 2006 – Jan 2010</div>
+  </div>
+  <div class="role__context">Costa Rica — Logistics, banking and GPS telematics</div>
+  <ul>
+    <li>Built distributed systems integrating GPS devices over TCP/IP and UDP with real-time data processing.</li>
+    <li>Developed single sign-on middleware, DHL trade and tracking applications and e-commerce systems; led the maintenance
+        team for a Citibank credit-card platform and trained teams on BizTalk Server.</li>
+  </ul>
+</div>
+
+<h2>Education</h2>
+<div class="edu"><div><b>BS, Computer Software Engineering</b> · Universidad Nacional, Costa Rica</div><div class="role__dates">2002 – 2006</div></div>
+<div class="edu"><div><b>Bachelor's, Philosophy of Formal Science</b> · Universidad Nacional, Costa Rica</div><div class="role__dates">2002 – 2006</div></div>
+
+<h2>Languages</h2>
+<p>Spanish (native) · English (advanced — 10+ years working remotely with US teams)</p>
+
+<h2>Links</h2>
+<div class="links">
+  <div><b>MLambda</b><a href="https://www.mlambda.net">www.mlambda.net</a></div>
+  <div><b>MLambda.AI</b><a href="https://www.mlambda.net/MLambda.AI/">www.mlambda.net/MLambda.AI</a> <span>— learn AI with Hilbert</span></div>
+  <div><b>Genesis</b><a href="https://genesis.mlambda.net">genesis.mlambda.net</a> <span>— DSL workbench</span></div>
+  <div><b>Actors</b><a href="https://actors.mlambda.net">actors.mlambda.net</a> <span>— .NET actor runtime</span></div>
+  <div><b>GitHub</b><a href="https://github.com/mlambda-net">github.com/mlambda-net</a></div>
+  <div><b>Personal site</b><a href="https://yordivad.github.io">yordivad.github.io</a></div>
+</div>
+
+</body>
+</html>
