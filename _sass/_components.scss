@@ -305,3 +305,7 @@
 }
 
 .essay__gloss { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+
+.essay__links { margin: 0.6em 0 0; font-size: 0.9rem; color: var(--muted); }
+.essay__links a { text-decoration: none; }
+.essay__links a:hover { color: var(--accent-2); }

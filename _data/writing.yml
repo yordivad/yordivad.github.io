@@ -55,3 +55,60 @@ essays:
       A map of waking up, drawn from Kabbalah, neuroscience and Buddhism — written for
       the author's children.
     slug: viviendo-en-modo-automatico
+
+papers:
+  - title_en: Consciousness and the Noumenon
+    title_es: La conciencia y el noúmeno
+    subtitle: A projection account of why the mind cannot be found among objects.
+    gloss: >-
+      If the world of experience is the projection of a reality with more dimensions, Kant's
+      phenomenon and noumenon change sense and consciousness belongs to the noumenon: which is why
+      neuroscience finds correlates and never the experience, why other minds appear only as
+      intention, and why brain and mind correspond without interacting.
+    slug: consciousness
+
+  - title_en: Malkhut and the Mind
+    title_es: Maljut y la mente
+    subtitle: Kabbalistic levels, projection and the dissolution of the mind–body problem.
+    gloss: >-
+      The Tree of the sefirot, the four worlds and the five levels of the soul read as a map of
+      projection. Elisabeth of Bohemia's question to Descartes dissolves as the entanglement paradox
+      does: we are not a mind attached to a body, but a mind seen in three dimensions.
+    slug: kabbalah
+
+  - title_en: Why Machines Cannot Think
+    title_es: Por qué las máquinas no pueden pensar
+    subtitle: Projection, information loss and the limits of artificial minds.
+    gloss: >-
+      Many dimensions can be projected into three; three cannot be projected back into many. A
+      projection has no inverse (Sard, Brouwer) and no processing creates information the data never
+      carried. A language model computes on a shadow of a shadow, and Turing's test measures the
+      shadow.
+    slug: machines
+
+  - title_en: The Shadow and the Object
+    title_es: La sombra y el objeto
+    subtitle: Dimensional projection and the limits of observation.
+    gloss: >-
+      Projection realism: imaginary numbers, the velocity no photograph holds, relativity and
+      entanglement share one structure, a feature of the shadow taken for a feature of the object.
+      With Plato, Kant, and the history of unification in physics.
+    slug: philosophy
+
+  - title_en: Lifting and Projection
+    title_es: Elevación y proyección
+    subtitle: Roots, rotations and the rank of a state.
+    gloss: >-
+      One formula for rotations, shears and hyperbolic rotations; a quadratic with no real roots read
+      on the line, the plane, matrices and the quaternions, where its roots form a sphere; what a
+      projection destroys; velocity as a column of a matrix; separability as a rank condition.
+    slug: mathematics
+
+  - title_en: Hidden Components
+    title_es: Componentes ocultas
+    subtitle: Projection, extra dimensions and entanglement in physical description.
+    gloss: >-
+      A robot arm's velocity, the Dirac electron's hidden components, Kaluza and Klein's fifth
+      dimension and entangled pairs, each a state with more components than the observation; with a
+      real twelve-component model of entanglement and the current experimental bounds.
+    slug: physics
