@@ -20,7 +20,7 @@ images:
   - src: /images/work/webmail-inbox.png
     alt: "MLambda Mail: the inbox"
   - src: /images/work/muse-products.png
-    alt: "Muse: the products"
+    alt: "Muse: the company site and every product's page"
 ---
 **Genesis** holds the whole family: the languages, the runtime, the intelligence, the services and the
 applications (CRM, ERP, a service desk, an integration platform, Muse for marketing, logistics apps). Around them I
