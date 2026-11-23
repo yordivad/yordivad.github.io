@@ -16,5 +16,98 @@
   </main>
 
   {%- include footer.html -%}
+
+  <dialog class="viewer" data-viewer aria-label="Picture">
+    <figure class="viewer__stage">
+      <img class="viewer__img" alt="" data-viewer-img>
+      <figcaption class="viewer__caption"><span data-viewer-caption></span><span class="viewer__count" data-viewer-count></span></figcaption>
+    </figure>
+    <button class="viewer__close" type="button" aria-label="Close" data-viewer-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="viewer__arrow viewer__arrow--prev" type="button" aria-label="Previous" data-viewer-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="viewer__arrow viewer__arrow--next" type="button" aria-label="Next" data-viewer-next><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </dialog>
+
+  <script>
+  // Galleries (_includes/gallery.html) and the viewer: one view at a time, moved by arrows, dots, keys and swipes,
+  // turning by itself every seven seconds unless the reader prefers less motion or is looking at it; a picture
+  // opened grows from its place into the viewer, and the viewer walks the same gallery.
+  (function () {
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var viewer = document.querySelector("[data-viewer]");
+    var vImg = viewer.querySelector("[data-viewer-img]"), vCap = viewer.querySelector("[data-viewer-caption]");
+    var vCount = viewer.querySelector("[data-viewer-count]");
+    var current = null;
+    function two(n) { return (n < 10 ? "0" : "") + n; }
+
+    function Gallery(box) {
+      var self = this, slides = box.querySelectorAll(".gallery__slide"), dots = box.querySelectorAll("[data-dot]");
+      var caption = box.querySelector("[data-caption]"), count = box.querySelector("[data-count]");
+      var at = 0, held = false, x0 = null;
+      self.size = slides.length;
+      self.img = function (i) { return slides[i].querySelector("img"); };
+      self.show = function (i) {
+        at = (i + slides.length) % slides.length;
+        slides.forEach(function (s, k) { s.classList.toggle("is-shown", k === at); });
+        dots.forEach(function (d, k) { if (k === at) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
+        if (caption) caption.textContent = self.img(at).alt;
+        if (count) count.textContent = two(at + 1);
+        return at;
+      };
+      self.at = function () { return at; };
+      var prev = box.querySelector("[data-prev]"), next = box.querySelector("[data-next]");
+      if (prev) prev.addEventListener("click", function () { self.show(at - 1); });
+      if (next) next.addEventListener("click", function () { self.show(at + 1); });
+      dots.forEach(function (d) { d.addEventListener("click", function () { self.show(Number(d.dataset.dot)); }); });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { self.show(at + 1); e.preventDefault(); }
+        if (e.key === "ArrowLeft") { self.show(at - 1); e.preventDefault(); }
+      });
+      box.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; held = true; }, { passive: true });
+      box.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0; x0 = null;
+        if (Math.abs(dx) > 40) self.show(at + (dx < 0 ? 1 : -1));
+      });
+      ["mouseenter", "focusin"].forEach(function (n) { box.addEventListener(n, function () { held = true; }); });
+      ["mouseleave", "focusout"].forEach(function (n) { box.addEventListener(n, function () { held = false; }); });
+      box.querySelectorAll("[data-open]").forEach(function (b, k) {
+        b.addEventListener("click", function () { open(self, k, b.querySelector("img")); });
+      });
+      if (!still && slides.length > 1) window.setInterval(function () {
+        if (!held && !document.hidden && !viewer.open) self.show(at + 1);
+      }, 7000);
+    }
+
+    function paint(g, i) {
+      var img = g.img(i);
+      vImg.src = img.currentSrc || img.src; vImg.alt = img.alt;
+      vCap.textContent = img.alt;
+      vCount.textContent = g.size > 1 ? two(i + 1) + " / " + two(g.size) : "";
+      viewer.classList.toggle("is-single", g.size < 2);
+    }
+    function open(g, i, from) {
+      current = g; paint(g, i);
+      viewer.showModal();
+      if (still || !vImg.animate) return;
+      var a = from.getBoundingClientRect(), b = vImg.getBoundingClientRect();
+      if (!b.width) return;
+      var sx = a.width / b.width, sy = a.height / b.height;
+      vImg.animate([
+        { transform: "translate(" + (a.left - b.left) + "px," + (a.top - b.top) + "px) scale(" + sx + "," + sy + ")", opacity: 0.6 },
+        { transform: "none", opacity: 1 }
+      ], { duration: 520, easing: "cubic-bezier(.2,.7,.2,1)" });
+    }
+    function step(d) { if (current) paint(current, current.show(current.at() + d)); }
+    viewer.querySelector("[data-viewer-close]").addEventListener("click", function () { viewer.close(); });
+    viewer.querySelector("[data-viewer-prev]").addEventListener("click", function () { step(-1); });
+    viewer.querySelector("[data-viewer-next]").addEventListener("click", function () { step(1); });
+    viewer.addEventListener("click", function (e) { if (e.target === viewer) viewer.close(); });
+    viewer.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    });
+    document.querySelectorAll("[data-gallery]").forEach(function (box) { new Gallery(box); });
+  })();
+  </script>
 </body>
 </html>

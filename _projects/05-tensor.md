@@ -8,6 +8,13 @@ tech: ["Lazy graphs", "Einstein summation", "Kernel fusion", "Cost-based plannin
 links:
   - name: "Hilbert.Tensor"
     url: https://www.mlambda.net/products/tensor.html
+images:
+  - src: /images/science/born.png
+    alt: "The Born rule, computed exactly on the tensor engine"
+  - src: /images/science/circuit.png
+    alt: "A GHZ circuit stepped gate by gate"
+  - src: /images/work/neuron-models.png
+    alt: "Models running on the same engine"
 ---
 I **redefined the tensor from scratch**. A tensor is a term, not a buffer: an operation adds a node of mathematics
 to a lazy graph, so the graph can be rewritten by laws before it runs, and gradients come from the same calculus

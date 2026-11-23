@@ -1,0 +1,32 @@
+{%- comment -%}
+  A gallery of pictures: one at a time, in a thin gold frame, the one shown drifting slowly; arrows, dots, keys and
+  a swipe move it. A picture opened grows into the viewer (the default layout's <dialog>), full size.
+  include.images: a list of { src, alt }; include.label: what the gallery shows.
+{%- endcomment -%}
+{%- assign pics = include.images -%}
+<div class="gallery" data-gallery role="region" aria-roledescription="carousel" aria-label="{{ include.label | escape }}" tabindex="0">
+  <div class="gallery__frame">
+    <div class="gallery__track">
+      {%- for i in pics %}
+      <figure class="gallery__slide{% if forloop.first %} is-shown{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ pics.size }}">
+        <button class="gallery__open" type="button" data-open aria-label="Open: {{ i.alt | escape }}">
+          <img src="{{ i.src | relative_url }}" alt="{{ i.alt | escape }}"{% unless forloop.first %} loading="lazy"{% endunless %}>
+        </button>
+      </figure>
+      {%- endfor %}
+    </div>
+    {%- if pics.size > 1 %}
+    <button class="gallery__arrow gallery__arrow--prev" type="button" aria-label="Previous" data-prev><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="gallery__arrow gallery__arrow--next" type="button" aria-label="Next" data-next><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    {%- endif %}
+  </div>
+  <div class="gallery__foot">
+    <p class="gallery__caption" data-caption>{{ pics.first.alt }}</p>
+    {%- if pics.size > 1 %}
+    <div class="gallery__nav">
+      <div class="gallery__dots">{% for i in pics %}<button type="button" aria-label="View {{ forloop.index }}" data-dot="{{ forloop.index0 }}"{% if forloop.first %} aria-current="true"{% endif %}></button>{% endfor %}</div>
+      <span class="gallery__count"><span data-count>01</span> <span class="gallery__of">/</span> {% if pics.size < 10 %}0{% endif %}{{ pics.size }}</span>
+    </div>
+    {%- endif %}
+  </div>
+</div>

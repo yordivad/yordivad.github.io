@@ -1,0 +1,19 @@
+# The home page's gallery: one view of each piece of work, in the order they are told.
+- src: /images/work/turing-model.png
+  alt: "Turing — a domain model composed from the requirements"
+- src: /images/science/proto-simulation.png
+  alt: "MLambda Science — a CAD simulation sweep (its design canvas)"
+- src: /images/science/circuit.png
+  alt: "MLambda Science — a quantum circuit, computed on my tensor engine"
+- src: /images/work/aleph-terminal.png
+  alt: "Aleph — the language and its native compiler"
+- src: /images/work/muse-products.png
+  alt: "Muse — marketing around the product"
+- src: /images/work/crm-deals.png
+  alt: "MLambda CRM — every deal on its pipeline"
+- src: /images/work/neuron-models.png
+  alt: "Neuron — models on the GPU"
+- src: /images/work/data-overview.png
+  alt: "MLambda.Data — the database engine's admin"
+- src: /images/work/design-window.png
+  alt: "Design — the window, proved against its prototype"

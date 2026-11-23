@@ -115,6 +115,8 @@ description: Roy Gonzalez — software architect and designer, expert in archite
 
   <h2>Selected work</h2>
 
+  {% include gallery.html images=site.data.showcase label="Selected work" %}
+
   {% assign featured = site.projects | where: "featured", true | sort: "weight" %}
   <ul class="doors">
   {% for p in featured %}
