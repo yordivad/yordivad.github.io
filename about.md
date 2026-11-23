@@ -34,9 +34,9 @@ shared state instead of guarding it.</p>
 Accenture, Aurea, Mobilize.Net and TradeStation, where a trading platform's fault tolerance
 is not an abstract concern. Then, from 2019, <a href="{{ '/research/' | relative_url }}">MLambda</a>
 — an actor framework, then a database built entirely out of actors, then a compiler workbench,
-then a language of my own, then an operating system, and now neuro-symbolic AI that puts
-modal and temporal logic inside a neural architecture rather than bolting a reasoner onto the
-side of one.</p>
+then a language of my own and its native compiler, then an operating system, a tensor engine written from scratch,
+agents whose decisions are logic and whose perception is neural, and Turing, which reasons about a system's
+architecture before it is built.</p>
 
 <p>The sequence was not planned. Each project turned out to need the one after it. The
 database needed a specification language, which needed a parser framework, which became

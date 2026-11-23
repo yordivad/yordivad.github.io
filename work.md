@@ -30,10 +30,13 @@ wide: true
 <h2>What I work in</h2>
 
 <ul>
-  <li><strong>Architecture</strong> — TOGAF, domain-driven design, event-driven and actor-model systems, microservices, evolutionary architecture.</li>
-  <li><strong>Languages</strong> — C# and .NET first; Go, Rust, Python and C; TypeScript and React where the work reaches the browser.</li>
-  <li><strong>Compilers and formal methods</strong> — parser combinators, type systems, code generation to LLVM and WebAssembly, TLA+ and Z specification, model checking.</li>
-  <li><strong>Machine learning and neural networks</strong> — transformer architectures, graph attention, fast weights and meta-learning, LLM integration and retrieval-augmented generation; the neuro-symbolic work on the <a href="{{ '/research/' | relative_url }}">research</a> page.</li>
+  <li><strong>Architecture</strong> — TOGAF, the SEI's quality attributes, domain-driven design, event-driven and actor-model systems, microservices, evolutionary architecture.</li>
+  <li><strong>Distributed applications</strong> — actor models and clusters, replication and consistency, sagas, integration by events, Kubernetes deployments per client.</li>
+  <li><strong>Design</strong> — product research, prototypes of every screen and state, design systems, a UI language of my own, and windows proved against their prototypes side by side.</li>
+  <li><strong>Languages</strong> — Aleph (my own) first; C# and .NET, Go, Rust, Python and C; TypeScript and React where the work reaches the browser.</li>
+  <li><strong>Compilers and formal methods</strong> — type systems, optimisation, code generation to LLVM, RISC-V and WebAssembly, logic programming, TLA+ and Z specification, model checking.</li>
+  <li><strong>Systems</strong> — a database engine, an actor runtime, an embedded operating system on RISC-V, a tensor engine on the GPU.</li>
+  <li><strong>Machine learning and neural networks</strong> — a neural engine on the GPU, transformers, diffusion and speech models, BDI agents, LLM integration and retrieval-augmented generation; the neuro-symbolic work on the <a href="{{ '/research/' | relative_url }}">research</a> page.</li>
   <li><strong>Data</strong> — PostgreSQL, MongoDB, SQL Server, Apache Spark, Mondrian, Analysis Services; and a distributed database of my own.</li>
   <li><strong>Platform</strong> — Kubernetes, Helm, Terraform, AWS, Docker, CI/CD, observability.</li>
 </ul>

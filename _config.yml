@@ -1,17 +1,17 @@
 title: Roy Gonzalez
-tagline: Software architect · distributed systems · language and compiler research
+tagline: Software architect · languages and compilers · distributed systems · design
 email: yordivad@gmail.com
 description: >-
-  Roy Gonzalez — software architect with 18 years building distributed systems,
-  and the independent researcher behind MLambda: the Aleph language, the Genesis
-  compiler workbench, an actor-native database, and neuro-symbolic AI.
+  Roy Gonzalez — software architect with 18 years building distributed systems, expert in architecture,
+  domain-driven design and distributed applications, and the builder of MLambda: the Aleph language and its
+  compiler, a database engine, an actor model, an embedded operating system, a tensor engine and Turing.
 url: "https://yordivad.github.io"
 baseurl: ""
 lang: en
 
 linkedin: https://www.linkedin.com/in/yordivad/
 github: https://github.com/yordivad
-mlambda: https://mlambda.net
+mlambda: https://www.mlambda.net
 essays: https://yordivad.github.io/ensayo/
 
 permalink: pretty
