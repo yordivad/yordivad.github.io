@@ -12,9 +12,17 @@ links:
     url: https://www.mlambda.net/products/aphrodite.html
 images:
   - src: /images/work/design-canvas.png
-    alt: "The prototype"
+    alt: "The prototype: a clickable canvas"
   - src: /images/work/design-window.png
-    alt: "The window built from it"
+    alt: "The window built from it, in Aphrodite"
+  - src: /images/work/muse-products.png
+    alt: "Muse: marketing around the product"
+  - src: /images/work/muse-piece-image.png
+    alt: "A piece, edited stage by stage"
+  - src: /images/work/muse-project-page.png
+    alt: "The product's own page"
+  - src: /images/work/muse-brand.png
+    alt: "The brand"
 ---
 I design the products as well as build them. Each one starts with research into how people work and a clickable
 prototype of every screen and state. The windows are written in **Aphrodite**, a UI language I created that draws

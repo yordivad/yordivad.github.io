@@ -10,6 +10,13 @@ links:
     url: https://www.mlambda.net/products/hilbert.html
   - name: "Hilbert Shin"
     url: https://www.mlambda.net/products/shin.html
+images:
+  - src: /images/science/circuit.png
+    alt: "Quantum mechanics as Hilbert laws"
+  - src: /images/science/learn-chapter.png
+    alt: "A chapter that teaches as it computes"
+  - src: /images/science/inspector.png
+    alt: "The state, inspected"
 ---
 **Hilbert** is the language where MLambda's mathematics lives: a model is a set of laws, computing is rewriting by
 them, and the compiler turns them into native code. **Shin** is its logic-programming dialect: rules and facts with

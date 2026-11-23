@@ -12,7 +12,13 @@ links:
     url: https://www.mlambda.net/products/neuron.html
 images:
   - src: /images/work/neuron-models.png
-    alt: "Neuron's models"
+    alt: "Neuron: the models on this machine"
+  - src: /images/work/workflow.png
+    alt: "A workflow of models"
+  - src: /images/work/playground-chat.png
+    alt: "A conversation with a local model"
+  - src: /images/work/machine.png
+    alt: "The machine: GPU, memory and what is loaded"
 ---
 **Max** is an agent language on the belief–desire–intention architecture: neural models perceive, and a logic
 theory derives what an agent is owed, licensed and has broken, so an agent cannot promise what its policy does not

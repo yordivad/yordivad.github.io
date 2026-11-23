@@ -10,6 +10,17 @@ links:
     url: https://www.mlambda.net/products/genesis.html
   - name: "Quality and delivery"
     url: https://www.mlambda.net/products/quality.html
+images:
+  - src: /images/work/crm-today.png
+    alt: "MLambda CRM: the day"
+  - src: /images/work/crm-deals.png
+    alt: "MLambda CRM: deals on their pipeline"
+  - src: /images/work/oauth-tenants.png
+    alt: "MLambda OAuth: tenants and their clients"
+  - src: /images/work/webmail-inbox.png
+    alt: "MLambda Mail: the inbox"
+  - src: /images/work/muse-products.png
+    alt: "Muse: the products"
 ---
 **Genesis** holds the whole family: the languages, the runtime, the intelligence, the services and the
 applications (CRM, ERP, a service desk, an integration platform, Muse for marketing, logistics apps). Around them I

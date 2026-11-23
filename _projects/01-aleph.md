@@ -12,7 +12,11 @@ links:
     url: https://store.mlambda.net/
 images:
   - src: /images/work/aleph-terminal.png
-    alt: "Aleph in the terminal"
+    alt: "Aleph in the terminal: a project made, built and run"
+  - src: /images/work/aleph-build.png
+    alt: "A native build, module by module"
+  - src: /images/work/aleph-code.png
+    alt: "Aleph source: traits, instances and pattern matching"
 ---
 I designed and built **Aleph**, a pure, lazy, Hindley–Milner typed language, and its **native compiler**, which is
 written in Aleph itself. The compiler is a pipeline of small phases: a front end generated from its grammar, type
