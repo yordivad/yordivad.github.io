@@ -6,6 +6,13 @@
   <div class="entry__body">
     <h2 class="entry__role">{{ project.title }}</h2>
     {{ project.content | markdownify }}
+    {%- if project.images %}
+    <div class="shots">
+      {%- for i in project.images %}
+      <figure><img src="{{ i.src | relative_url }}" alt="{{ i.alt }}" loading="lazy"><figcaption>{{ i.alt }}</figcaption></figure>
+      {%- endfor %}
+    </div>
+    {%- endif %}
     <ul class="tags">
       {%- for t in project.tech %}<li class="tag">{{ t }}</li>{% endfor -%}
     </ul>

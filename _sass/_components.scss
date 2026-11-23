@@ -309,3 +309,11 @@
 .essay__links { margin: 0.6em 0 0; font-size: 0.9rem; color: var(--muted); }
 .essay__links a { text-decoration: none; }
 .essay__links a:hover { color: var(--accent-2); }
+
+// Project screenshots ---------------------------------------------------------
+
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin: 1.2rem 0 0.4rem; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 12px 32px -18px rgba(0, 0, 0, 0.45); }
+.shots figcaption { margin-top: 0.4rem; font-size: 0.82rem; color: var(--ink-2); }
+div.door { cursor: default; }
